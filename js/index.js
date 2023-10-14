@@ -169,7 +169,7 @@ const updateCode = () => {
 
         console.log({ currentXInches, currentYInches, nextXInches, nextYInches })
 
-        codeString += `this->translateRelative(${(nextXInches - currentXInches).toFixed(2)}, ${(nextYInches - currentYInches).toFixed(2)}, 32.5);\n`
+        codeString += `this->translateRelative(${(nextXInches - currentXInches).toFixed(2)}, ${(nextYInches - currentYInches).toFixed(2)});\n`
     })
     
     $("#codeContent").text(codeString);
