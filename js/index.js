@@ -165,7 +165,7 @@ const updateCode = () => {
         const currentYInches = scaleCoordsToInches(element.getPointY()) - 12;
 
         const nextXInches = scaleCoordsToInches(autonMovePoints[index+1].getPointX());
-        const nextYInches = scaleCoordsToInches(C_HEIGHT - autonMovePoints[index+1].getPointY()) - 12;
+        const nextYInches = scaleCoordsToInches(autonMovePoints[index+1].getPointY()) - 12;
 
         console.log({ currentXInches, currentYInches, nextXInches, nextYInches })
 
