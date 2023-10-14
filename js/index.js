@@ -244,6 +244,8 @@ $("#update").click(function (e) {
     autonPoint.setPositionX(scaleInchesToCoords( Number($("#xpos").val()) ));
     autonPoint.setPositionY(scaleInchesToCoords( Number($("#ypos").val()) + 12 ));
 
+    updateCode();
+
     canvas.renderAll();
 });
 
