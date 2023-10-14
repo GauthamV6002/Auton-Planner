@@ -1,0 +1,10 @@
+addAutonPoint(110.34, 11.739999999999998);
+addAutonPoint(96.32, 71.34);
+addAutonPoint(122.46, 72.38);
+addAutonPoint(108.43, 72);
+addAutonPoint(76.68, 72);
+addAutonPoint(122.49, 72.26);
+addAutonPoint(108.43, 72.26);
+addAutonPoint(76.68, 47.8);
+addAutonPoint(122.23, 66.79);
+addAutonPoint(74.86, 17.87);
