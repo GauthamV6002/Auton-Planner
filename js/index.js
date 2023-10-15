@@ -158,18 +158,25 @@ canvas.add(robot);
 const updateCode = () => {
 
     let codeString = "";
+    let currentAngle = 0;
     
     autonMovePoints.forEach((element, index) => {
         if(index === autonMovePoints.length - 1) return; // skip last
-        const currentXInches = scaleCoordsToInches(element.getPointX());
-        const currentYInches = scaleCoordsToInches(element.getPointY()) - 12;
+        const currentXInches = scaleCoordsToInches(element.getPointX() + PT_RADIUS);
+        const currentYInches = scaleCoordsToInches(element.getPointY() + PT_RADIUS) - 12;
 
-        const nextXInches = scaleCoordsToInches(autonMovePoints[index+1].getPointX());
-        const nextYInches = scaleCoordsToInches(autonMovePoints[index+1].getPointY()) - 12;
+        const nextXInches = scaleCoordsToInches(autonMovePoints[index+1].getPointX() + PT_RADIUS);
+        const nextYInches = scaleCoordsToInches(autonMovePoints[index+1].getPointY() + PT_RADIUS) - 12;
 
         console.log({ currentXInches, currentYInches, nextXInches, nextYInches })
 
-        codeString += `this->translateRelative(${(nextXInches - currentXInches).toFixed(2)}, ${(nextYInches - currentYInches).toFixed(2)});\n`
+        const lookDir = (-1*Math.atan2(currentYInches - nextYInches, currentXInches - nextXInches) * RAD2DEG) - 90 + currentAngle;
+        const dist = Math.sqrt((currentYInches - nextYInches)*(currentYInches - nextYInches) + (currentXInches - nextXInches)*(currentXInches - nextXInches));
+
+        currentAngle -= lookDir;
+
+        codeString += `${Math.abs(lookDir) < 3 ? "//" : ''}this->turnToAngleRelative(${lookDir.toFixed(2)});\n`
+        codeString += `this->moveLateral(${dist.toFixed(2)});\n`
     })
     
     $("#codeContent").text(codeString);
