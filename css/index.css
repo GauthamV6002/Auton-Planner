@@ -27,6 +27,29 @@ main {
     height: 100vh;
 }
 
+/* NAV */
+
+nav {
+    display: flex;
+    width: 95%;
+    justify-content: space-between;    
+    position: absolute;
+    left: 2.5%;
+    right: 2.5%;
+}
+
+.heart-icon {
+    width: 1rem;
+}
+
+.github-icon {
+    width: 2rem;
+}
+
+.github-icon:hover {
+    cursor: pointer
+}
+
 /* PLANNER */
 
 canvas {
