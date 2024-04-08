@@ -19,7 +19,7 @@ _Sample Skills Route Created with the PLanner_
 | Nodes are centered at their top-left corners  | Location is known - `originX` and `originY` need to be set to `"center"`. | [Unfixed] Easy to fix, but requires some reworking in other locations
 | Turn calculations result in reflex angles | `math.atan2()` can provide reflex angles in some cases | [Unfixed] Manual calculations required to find the optimal angle, and an option to select the turn direction
 
-### Coming Soon:tm:
+### Coming Soon :tm:
 - Node Deletion with CRUD functionality
 - Variable Code Output System
 - Saving/Collaboration with Firebase
